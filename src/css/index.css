@@ -81,7 +81,7 @@ img {
   display: none;
 }
 
-.best-books-hidden-text {
+.best-books-overlay-text {
   font-family: 'DM Sans', sans-serif;
   font-weight: 500;
   font-size: 14px;
@@ -99,10 +99,16 @@ img {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
+  max-width: 335px;
   height: 100%;
 
   transform: translateY(-100%);
+
+  transition-property: transform;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+  cursor: pointer;
 }
 
 .best-books-content {
@@ -112,11 +118,11 @@ img {
   border-radius: 8px;
 }
 
-.best-books-item .best-books-hidden-text {
+.best-books-item .best-books-overlay-text {
   transform: translateY(100%);
 }
 
-.best-books-content:hover .best-books-hidden-text {
+.best-books-content:hover .best-books-overlay-text {
   transform: translateY(70%);
 }
 
@@ -124,6 +130,8 @@ img {
   border-radius: 8px;
   width: 335px;
   height: 485px;
+
+  cursor: pointer;
 }
 .best-books-heading {
   margin-top: 14px;
